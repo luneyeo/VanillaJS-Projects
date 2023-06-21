@@ -82,10 +82,10 @@ input::placeholder {
   background-color: #eee;
 }
 
-li.list-item span:nth-child(1) {
+li.list-item span.input-value {
   width: 330px;
   font-size: 15px;
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
 }
 li.list-item span:nth-child(2):hover {
   color: var(--color-blue);
