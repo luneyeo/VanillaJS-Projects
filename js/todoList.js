@@ -5,7 +5,6 @@ const listItems = document.querySelector('.list-items')
 const allDeleteBtn = document.querySelector('.all-delete')
 
 
-
 function submitValue(){
 
   // 할일 리스트

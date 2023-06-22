@@ -1,6 +1,6 @@
 #todoList {
   width: 400px;
-  height: 450px;
+  height: 510px;
   border-radius: 20px;
   overflow: hidden;
   background-color: #fff;
@@ -65,9 +65,9 @@ input::placeholder {
 }
 
 .list-items {
-  height: calc(100% - 53px);
+  max-height: 320px;
   margin-bottom : 20px;
-  padding-right: 10px;
+  padding-right: 6px;
   overflow: overlay;
 }
 
@@ -84,13 +84,13 @@ input::placeholder {
 
 
 .list-items li.list-item {
-  height: 43px;
+  min-height: 43px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
   cursor: pointer;
-  padding: 0 10px;
+  padding: 5px 10px;
 }
 .list-items li.list-item:hover {
   background-color: #eee;
@@ -102,7 +102,8 @@ li.list-item span.input-value {
 }
 
 span.input-value.off {
-  color: #777;
+  color: var(--color-blue);
+  opacity: .6;
   text-decoration: line-through;
 }
 li.list-item span:nth-child(2):hover {
