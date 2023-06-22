@@ -60,14 +60,28 @@ input::placeholder {
   width: 100%;
   height: 310px;
   margin: 20px 0;
-  padding: 0 20px;
+  padding: 0 10px 0 20px;
   position: relative;
 }
 
 .list-items {
   height: calc(100% - 53px);
   margin-bottom : 20px;
+  padding-right: 10px;
+  overflow: overlay;
 }
+
+/* 스크롤바 */
+.list-items::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+  background-color: #eee;
+}
+.list-items::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #aaa;
+}
+
 
 .list-items li.list-item {
   height: 43px;
@@ -85,7 +99,11 @@ input::placeholder {
 li.list-item span.input-value {
   width: 330px;
   font-size: 15px;
-  /* text-decoration: line-through; */
+}
+
+span.input-value.off {
+  color: #777;
+  text-decoration: line-through;
 }
 li.list-item span:nth-child(2):hover {
   color: var(--color-blue);

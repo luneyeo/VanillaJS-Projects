@@ -5,7 +5,8 @@ const listItems = document.querySelector('.list-items')
 const allDeleteBtn = document.querySelector('.all-delete')
 
 
-addBtn.addEventListener('click', function(){
+
+function submitValue(){
 
   // 할일 리스트
   const listItem = document.createElement('li')
@@ -22,21 +23,20 @@ addBtn.addEventListener('click', function(){
   deleteBtn.textContent = 'close'
   
   if(!inputBox.value){
-
+    // alert('내용을 입력하세요')
   }
   else {
-
-
     listItem.appendChild(inputValue)
     listItem.appendChild(deleteBtn)
     listItems.appendChild(listItem)
 
     inputBox.value = '';
+    inputBox.focus()
   }
 
   // 리스트 클릭시 취소선
   listItem.addEventListener('click', function(){
-    inputValue.style.textDecoration = 'line-through'
+    inputValue.classList.toggle('off')
   })
 
   // 삭제 버튼 클릭시 사라짐
@@ -48,8 +48,13 @@ addBtn.addEventListener('click', function(){
   allDeleteBtn.addEventListener('click', function(){
     listItem.remove()
   })
+}
 
-
+addBtn.addEventListener('click', submitValue)
+inputBox.addEventListener('keyup', function(e){
+  if(e.keyCode === 13){
+    submitValue()
+  }
 })
 
 
