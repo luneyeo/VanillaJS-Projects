@@ -1,4 +1,5 @@
 
+const inputForm = document.querySelector('.input-area')
 const inputBox = document.querySelector('.input-area input')
 const addBtn = document.querySelector('.input-area span')
 const listItems = document.querySelector('.list-items')
@@ -66,16 +67,20 @@ function submitValue(){
 
 // 엔터 눌러서 제출
 function enterSubmitValue(e){
+  e.preventDefault()
+  
   if(!inputBox.value){
 
-  } else if (e.keyCode === 13) {
+  }
+  else{
     addTodo()
     resetInputValue()
   }
 }
 
 addBtn.addEventListener('click', submitValue)
-inputBox.addEventListener('keyup', enterSubmitValue)
+inputForm.addEventListener('submit', enterSubmitValue)
+
 
 const savedTodos = localStorage.getItem(TODOS_KEY)
 

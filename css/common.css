@@ -45,7 +45,7 @@ input:focus { outline: none; }
 body {
   height: 100vh;
   position: relative;
-
+  /* background-color: rgb(255, 248, 239); */
 }
 
 #wrap {
@@ -70,7 +70,7 @@ main {
   width: calc(100% - 140px);
   height: 100%;
   position: relative;
-  background-color: #333;
+  background-color: #aaa;
 }
 
 main article {
@@ -98,6 +98,6 @@ main article {
 
 .menu li a:hover,
 .menu li.active a {
-  background-color: #333;
+  background-color: #aaa;
   color: #fff;
 }
