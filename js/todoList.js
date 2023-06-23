@@ -8,10 +8,10 @@ const allDeleteBtn = document.querySelector('.all-delete')
 
 const TODOS_KEY = "todos"
 // 스토리지에 저장
-const todos = []
-function saveTodos(){
-  localStorage.setItem(TODOS_KEY, JSON.stringify(todos))
-}
+// const todos = []
+// function saveTodos(){
+//   localStorage.setItem(TODOS_KEY, JSON.stringify(todos))
+// }
 
 function deleteTodo(){
   this.parentNode.remove()
@@ -30,7 +30,7 @@ function addTodo(){
   const inputValue = document.createElement('span')
   inputValue.classList.add('input-value')
   inputValue.textContent = inputBox.value
-  todos.push(inputBox.value)
+  // todos.push(inputBox.value)
 
   // 삭제 버튼
   const deleteBtn = document.createElement('span')
@@ -46,13 +46,16 @@ function addTodo(){
   allDeleteBtn.addEventListener('click', function(){ // 전체 삭제 버튼 클릭시 전체 삭제
     listItem.remove()
   })
+
+
 }
+
 
 // 입력창 초기화, 자동 포커스
 function resetInputValue(){
   inputBox.value = '';
   inputBox.focus()
-  saveTodos()
+  // saveTodos()
 }
 
 // 제출
@@ -82,6 +85,6 @@ addBtn.addEventListener('click', submitValue)
 inputForm.addEventListener('submit', enterSubmitValue)
 
 
-const savedTodos = localStorage.getItem(TODOS_KEY)
+// const savedTodos = localStorage.getItem(TODOS_KEY)
 
 resetInputValue()

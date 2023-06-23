@@ -103,7 +103,7 @@ li.list-item span.input-value {
 
 span.input-value.off {
   color: var(--color-blue);
-  opacity: .6;
+  opacity: .4;
   text-decoration: line-through;
 }
 li.list-item span:nth-child(2):hover {
