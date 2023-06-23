@@ -15,6 +15,8 @@
 html {
   --color-blue : #006aff;
   --color-bg : #333;
+  --color-main : #251D53;
+  --color-sub : #f0f4ff;
 }
 
 
@@ -28,9 +30,6 @@ input { border: none; }
 input:focus { outline: none; }
 
 .material-symbols-outlined {
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   font-size: 20px;
 }
 
@@ -46,34 +45,38 @@ input:focus { outline: none; }
 body {
   height: 100vh;
   position: relative;
-  /* background-color: rgb(255, 248, 239); */
+  background: url("../img/bg.png") no-repeat center;
+  background-size: 100%;
 }
 
 #wrap {
-  width: 800px;
+  width: 900px;
   height: 600px;
   display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 20px;
+  border: 15px solid var(--color-main);
+  border-radius: 30px;
   overflow: hidden;
-  border: 2px solid #333;
+  box-shadow: 0 0 20px rgba(0,0,0, .2);
+  background-color: var(--color-main);
 }
 
 
 header {
-  width: 140px;
+  width: 160px;
   height: 100%;
-  /* background-color: #eee; */
+  margin-right: 10px;
 }
 
 main {
-  width: calc(100% - 140px);
+  width: calc(100% - 170px);
   height: 100%;
+  border-radius: 20px;
   position: relative;
-  background-color: var(--color-bg);
+  background-color: var(--color-sub);
 }
 
 main article {
@@ -88,19 +91,30 @@ main article {
 /* 메뉴 */
 .menu {
   width: 100%;
+  padding-top: 20px;
 }
 .menu li {
-  border-bottom: 1px solid #aaa;
+  margin-left: 13px;
 }
 .menu li a {
   width: 100%;
-  height: 70px;
-  line-height: 70px;
+  height: 45px;
   text-align: center;
+  opacity: .6;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
 }
 
 .menu li a:hover,
 .menu li.active a {
-  background-color: var(--color-bg);
+  opacity: 1;
+}
+
+.menu li a span {
   color: #fff;
+  font-weight: 14px;
+}
+.menu li a span:nth-of-type(1) {
+  margin-right: 10px;
 }
