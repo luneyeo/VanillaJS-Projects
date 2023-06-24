@@ -13,3 +13,17 @@ for(let i = 0; i < menuBtn.length; i++){
     document.querySelector(targetID).style.display = 'block'
   })
 }
+
+
+
+// 팝업
+const popup = document.querySelector('#popup')
+const popupCloseBtn = document.querySelector('#popup .btn')
+
+
+
+function popupRemove(){
+  popup.remove()
+}
+
+// popupCloseBtn.addEventListener('click', popupRemove)

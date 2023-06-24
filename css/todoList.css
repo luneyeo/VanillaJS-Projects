@@ -4,12 +4,11 @@
 }
 .todoList-area {
   width: 400px;
-  max-height: 510px;
   border-radius: 20px;
   overflow: hidden;
   background-color: #fff;
 
-  box-shadow: 0 0 10px rgba(0,0,0, .3);
+  box-shadow: 0 0 6px rgba(0,0,0, .3);
 
   position: absolute;
   top: 50%;
@@ -74,7 +73,7 @@ input::placeholder {
 }
 
 .list-items {
-  max-height: 320px;
+  max-height: 280px;
   margin-bottom: 20px;
   padding-right: 6px;
   overflow: overlay;
