@@ -1,40 +1,120 @@
 aside > div {
   background-color: #fff;
-
 }
 /* 달력 */
 .calendar {
-  height: 300px;
+  min-height: 277px;
+  max-height: 300px;
   margin-bottom: 20px;
-  /* text-align: center;
-  line-height: 300px; */
   border-radius: 20px;
 }
 .calendar-inner {
   width: 100%;
   height: 100%;
-  padding: 15px;
+  padding: 20px 15px;
 }
 
+/* 달력 윗 부분 */
 .calendar-inner .calendar--top {
-  height: 50px;
-  margin-bottom: 10px;
-  /* background-color: yellow; */
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
+.calendar-inner .calendar--top > span:first-child {
+  margin-right: 10px;
+  font-size: 25px;
+}
+.calendar-inner .calendar--top .current-date {
+  flex-grow: 1;
+  font-size: 18px;
+}
+
+.calendar-inner .calendar--top .icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.calendar-inner .calendar--top .icons span {
+  border: 1px solid #eee;
+  border-radius: 50%;
+  padding: 2px;
+  cursor: pointer;
+}
+.calendar-inner .calendar--top .icons span:hover {
+  background-color: #eee;
+}
+
+
+
+
+
+
+
+/* 달력 아래 부분 */
 .calendar-inner .calendar--bottom {
-  width: 100%;
-  height: calc(100% - 60px);
+  /* width: 100%; */
   /* background-color: aqua; */
 }
+.calendar-inner .calendar--bottom li {
+  font-size: 13px;
+}
+.calendar-inner .calendar--bottom ul {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.calendar--bottom ul li {
+  width: calc(100% / 7);
+}
+
+.weeks {
+  margin-bottom: 10px;
+}
+.weeks li {
+  color: #aaa;
+}
+.days li {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  margin-top: 18px;
+}
+.days li.inactive {
+  color: #aaa;
+}
+.days li.active {
+  color: #fff;
+}
+.days li::before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  width: 30px;
+  aspect-ratio: 1/1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.days li:hover::before{
+  background-color: #eee;
+} 
+.days li.active::before{
+  background-color: var(--color-main);
+} 
+
+
+
 
 
 
 
 /* 시계 */
 .clock {
-  height: 70px;
-  line-height: 70px;
+  height: 50px;
+  line-height: 50px;
   text-align: center;
   border-radius: 50px;
   margin-bottom: 20px;
@@ -49,7 +129,7 @@ aside > div {
 
 /* 날씨 */
 .weather {
-  height: calc(100% - 320px - 90px);
+  flex-grow: 1;
   text-align: center;
   border-radius: 20px;
   display: flex;

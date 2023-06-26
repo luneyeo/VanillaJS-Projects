@@ -1,32 +1,53 @@
 // 달력
 
+const currentDate = document.querySelector('.calendar--top .current-date')
 const calendar = document.querySelector('.calendar--bottom')
-const yearsMonth = document.querySelector('.calendar--top .years-month')
+const daysTag = calendar.querySelector('.days')
+const prevNextIcons = document.querySelectorAll('.icons span')
+
+let date = new Date();
+currYear = date.getFullYear();
+currMonth = date.getMonth();
 
 
+const renderCalendar = () => {
+  let firstDateofMonth = new Date(currYear, currMonth, 1).getDay(); // 이번 달 첫째 날 구하기
+  let lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(); // 이번 달 마지막 날 구하기
+  let lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate(); // 저번 달 마지막 날 구하기
 
+  let liTag = " ";
 
-function renderCalendar(){
-  let date = new Date();
-  const viewYearMonth = `${date.getFullYear()}년 ${date.getMonth() + 1}월`
-  yearsMonth.innerText = `${viewYearMonth}`;
-}
-
-let daysArr = '';
-
-for( let i = 1; i <=30; i++){
-  if(i == 1){
-    daysArr += '[][]';
+  // 저번 달 날짜 구하기
+  for (let i = firstDateofMonth; i > 0; i--) {
+    liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`; // 마지막 날짜에서 1씩 줄어들기
   }
-  daysArr += " " + i;
-  if(i % 7 == 0){
-    daysArr += '\n';
+
+  // 이번 달 날짜 구하기
+  for (let i = 1; i <= lastDateofMonth; i++) {
+    liTag += `<li>${i}</li>`;
   }
+
+  
+  currentDate.innerText = `${currYear}년 ${currMonth + 1}월`
+  daysTag.innerHTML = liTag;
 }
 
 
 renderCalendar()
-calendar.innerText = `${daysArr}`;
+
+
+prevNextIcons.forEach(function(icon){
+  icon.addEventListener('click', function(){
+    currMonth = icon.id === 'prev' ? currMonth - 1 : currMonth + 1 // 월 이동 이벤트
+    renderCalendar()
+  })
+})
+
+
+
+
+
+
 
 
 
@@ -47,3 +68,25 @@ function getClock() {
 }
 getClock()
 setInterval(getClock, 1000)
+
+
+
+
+
+// 날씨
+
+const API_KEY = "a758b2bfe96799600a77b987a34a2210";
+
+
+function onGeoOk(position){
+  const lat = position.coords.latitude;
+  const log = position.coords.longitude;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${log}&appid=${API_KEY}`
+  // fetch(url)
+}
+function onGeoError(){
+  alert("Can't find you, No weather for you")
+}
+
+
+navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
