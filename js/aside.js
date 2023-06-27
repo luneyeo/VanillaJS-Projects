@@ -64,10 +64,6 @@ prevNextIcons.forEach(function(icon){
 
 
 
-
-
-
-
 // 시계
 const clock = document.querySelector('.clock span')
 
@@ -86,6 +82,8 @@ setInterval(getClock, 1000)
 
 
 
+
+
 // 날씨
 
 const API_KEY = "a758b2bfe96799600a77b987a34a2210";
@@ -94,8 +92,35 @@ const API_KEY = "a758b2bfe96799600a77b987a34a2210";
 function onGeoOk(position){
   const lat = position.coords.latitude;
   const log = position.coords.longitude;
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${log}&appid=${API_KEY}`
-  console.log(url)
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${log}&appid=${API_KEY}&units=metric`
+  fetch(url).then(response => response.json().then(data => {
+    const weatherIcon = document.querySelector('.weather-icon')
+    const city = document.querySelector('.weather-info span:first-child')
+    const temp = document.querySelector('.weather-info span:last-child')
+  
+    // weatherIcon.innerText = data.weather[0].main;
+
+
+
+
+    const clearIcon = `<span class="material-symbols-outlined">sunny</span>`
+    const cloudIcon = `<span class="material-symbols-outlined">cloud</span>`
+
+
+    if(data.weather[0].main === 'Clear'){
+      weatherIcon.innerHTML = clearIcon;
+    } else if(data.weather[0].main === 'Clouds'){
+      weatherIcon.innerHTML = cloudIcon;
+    }
+
+    city.innerText = data.name;
+    temp.innerText = `${Math.round(data.main.temp)}°C`
+
+
+
+
+
+  }))
 }
 function onGeoError(){
   alert("Can't find you, No weather for you")
