@@ -88,37 +88,18 @@ setInterval(getClock, 1000)
 
 const API_KEY = "a758b2bfe96799600a77b987a34a2210";
 
-
 function onGeoOk(position){
   const lat = position.coords.latitude;
   const log = position.coords.longitude;
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${log}&appid=${API_KEY}&units=metric`
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${log}&appid=${API_KEY}&units=metric&lang=kr`
   fetch(url).then(response => response.json().then(data => {
-    const weatherIcon = document.querySelector('.weather-icon')
+    const weather = document.querySelector('.weather-icon')
     const city = document.querySelector('.weather-info span:first-child')
     const temp = document.querySelector('.weather-info span:last-child')
-  
-    // weatherIcon.innerText = data.weather[0].main;
 
-
-
-
-    const clearIcon = `<span class="material-symbols-outlined">sunny</span>`
-    const cloudIcon = `<span class="material-symbols-outlined">cloud</span>`
-
-
-    if(data.weather[0].main === 'Clear'){
-      weatherIcon.innerHTML = clearIcon;
-    } else if(data.weather[0].main === 'Clouds'){
-      weatherIcon.innerHTML = cloudIcon;
-    }
-
+    weather.innerHTML = `<span>${data.weather[0].description}</span>`;
     city.innerText = data.name;
     temp.innerText = `${Math.round(data.main.temp)}°C`
-
-
-
-
 
   }))
 }
