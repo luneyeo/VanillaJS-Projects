@@ -3,8 +3,9 @@ aside > div {
 }
 /* 달력 */
 .calendar {
-  min-height: 277px;
-  max-height: 300px;
+  /* height: 324px; */
+  /* min-height: 277px; */
+  /* max-height: 300px; */
   margin-bottom: 20px;
   border-radius: 20px;
 }
@@ -16,18 +17,22 @@ aside > div {
 
 /* 달력 윗 부분 */
 .calendar-inner .calendar--top {
-  margin-bottom: 20px;
   display: flex;
   align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
 }
 
 .calendar-inner .calendar--top > span:first-child {
   margin-right: 10px;
   font-size: 25px;
+  color: var(--color-main);
 }
 .calendar-inner .calendar--top .current-date {
   flex-grow: 1;
   font-size: 18px;
+  color: var(--color-main);
 }
 
 .calendar-inner .calendar--top .icons {
@@ -41,6 +46,7 @@ aside > div {
   border-radius: 50%;
   padding: 2px;
   cursor: pointer;
+  color: var(--color-main);
 }
 .calendar-inner .calendar--top .icons span:hover {
   background-color: #eee;
@@ -53,12 +59,10 @@ aside > div {
 
 
 /* 달력 아래 부분 */
-.calendar-inner .calendar--bottom {
-  /* width: 100%; */
-  /* background-color: aqua; */
-}
+
 .calendar-inner .calendar--bottom li {
   font-size: 13px;
+  color: var(--color-main);
 }
 .calendar-inner .calendar--bottom ul {
   display: flex;
@@ -69,10 +73,8 @@ aside > div {
   width: calc(100% / 7);
 }
 
-.weeks {
-  margin-bottom: 10px;
-}
 .weeks li {
+  /* font-weight: bold; */
   color: #aaa;
 }
 .days li {

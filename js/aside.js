@@ -13,6 +13,7 @@ currMonth = date.getMonth();
 const renderCalendar = () => {
   let firstDateofMonth = new Date(currYear, currMonth, 1).getDay(); // 이번 달 첫째 날 구하기
   let lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(); // 이번 달 마지막 날 구하기
+  let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(); // 다음달 첫째 날 구하기
   let lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate(); // 저번 달 마지막 날 구하기
 
   let liTag = " ";
@@ -24,7 +25,14 @@ const renderCalendar = () => {
 
   // 이번 달 날짜 구하기
   for (let i = 1; i <= lastDateofMonth; i++) {
-    liTag += `<li>${i}</li>`;
+    let isToday = i === date.getDate() && currMonth === new Date().getMonth()
+                    && currYear === new Date().getFullYear() ? "active" : ""
+    liTag += `<li class="${isToday}">${i}</li>`;
+  }
+
+  // 다음 달 날짜 구하기
+  for (let i = lastDayofMonth; i < 6; i++) {
+    liTag += `<li class="inactive">${i - lastDayofMonth  + 1}</li>`; // 마지막 날짜에서 1씩 줄어들기
   }
 
   
@@ -32,18 +40,23 @@ const renderCalendar = () => {
   daysTag.innerHTML = liTag;
 }
 
-
 renderCalendar()
-
 
 prevNextIcons.forEach(function(icon){
   icon.addEventListener('click', function(){
     currMonth = icon.id === 'prev' ? currMonth - 1 : currMonth + 1 // 월 이동 이벤트
+
+    // 1월보다 적거나 12월보다 커지면 연도 변경
+    if(currMonth < 0 || currMonth > 11){
+      date = new Date(currYear, currMonth);
+      currYear = date.getFullYear();
+      currMonth = date.getMonth();
+    } else {
+      date = new Date();
+    }
     renderCalendar()
   })
 })
-
-
 
 
 
@@ -82,7 +95,7 @@ function onGeoOk(position){
   const lat = position.coords.latitude;
   const log = position.coords.longitude;
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${log}&appid=${API_KEY}`
-  // fetch(url)
+  console.log(url)
 }
 function onGeoError(){
   alert("Can't find you, No weather for you")
