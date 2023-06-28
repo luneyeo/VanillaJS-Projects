@@ -88,6 +88,8 @@ setInterval(getClock, 1000)
 
 const API_KEY = "a758b2bfe96799600a77b987a34a2210";
 
+
+
 function onGeoOk(position){
   const lat = position.coords.latitude;
   const log = position.coords.longitude;
@@ -96,10 +98,22 @@ function onGeoOk(position){
     const weather = document.querySelector('.weather-icon')
     const city = document.querySelector('.weather-info span:first-child')
     const temp = document.querySelector('.weather-info span:last-child')
+    let weatherCondition = data.weather[0].main
 
-    weather.innerHTML = `<span>${data.weather[0].description}</span>`;
+    
     city.innerText = data.name;
     temp.innerText = `${Math.round(data.main.temp)}°C`
+
+
+
+    // 날씨 아이콘 - 수정 예정
+    if(weatherCondition === 'Clouds'){
+      weather.innerHTML = `<span class="material-symbols-outlined">cloudy</span>`;
+    } else if (weatherCondition === 'Sunny') {
+      weather.innerHTML = `<span class="material-symbols-outlined">sunny</span>`;
+    } else if (weatherCondition === 'Rain') {
+      weather.innerHTML = `<span class="material-symbols-outlined">rainy</span>`;
+    }
 
   }))
 }

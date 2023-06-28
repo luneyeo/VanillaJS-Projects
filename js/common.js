@@ -32,14 +32,30 @@ function popupRemove(){
 
 
 
+// 라이트, 다크 모드
+const modeArea = document.querySelector('.mode-container')
+const lightModeBtn = document.querySelector('.light-mode')
+const darkModeBtn = document.querySelector('.dark-mode')
 
-const $checkbox = document.querySelector('.check');
+// 기본 라이트 모드
 document.documentElement.setAttribute('color-theme', 'light');
 
-$checkbox.addEventListener('click', e=> {
-  if (e.target.checked) {
-    document.documentElement.setAttribute('color-theme', 'dark');
-  } else {
-    document.documentElement.setAttribute('color-theme', 'light');
-  }
-});
+
+function lightMode(){
+  lightModeBtn.classList.add('active')
+  darkModeBtn.classList.remove('active')
+  modeArea.classList.remove('change-dark')
+  modeArea.classList.add('change-light')
+
+  document.documentElement.setAttribute('color-theme', 'light');
+}
+function darkMode(){
+  darkModeBtn.classList.add('active')
+  lightModeBtn.classList.remove('active')
+  modeArea.classList.add('change-dark')
+  modeArea.classList.remove('change-light')
+  document.documentElement.setAttribute('color-theme', 'dark');
+}
+
+lightModeBtn.addEventListener('click', lightMode)
+darkModeBtn.addEventListener('click', darkMode)
