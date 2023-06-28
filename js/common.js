@@ -27,3 +27,19 @@ function popupRemove(){
 }
 
 // popupCloseBtn.addEventListener('click', popupRemove)
+
+
+
+
+
+
+const $checkbox = document.querySelector('.check');
+document.documentElement.setAttribute('color-theme', 'light');
+
+$checkbox.addEventListener('click', e=> {
+  if (e.target.checked) {
+    document.documentElement.setAttribute('color-theme', 'dark');
+  } else {
+    document.documentElement.setAttribute('color-theme', 'light');
+  }
+});
