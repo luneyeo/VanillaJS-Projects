@@ -75,10 +75,6 @@ nav {
   cursor: pointer;
 }
 
-.mode-container button.active {
-  /* background-color: #aaa; */
-}
-
 .mode-container button span {
   color: var(--colot-font-basic);
 }
@@ -101,6 +97,7 @@ nav {
   transform: translateY(-50%);
 
   background-color: var(--color-box-hover);
+  border: 1px solid var(--color-border);
 }
 
 

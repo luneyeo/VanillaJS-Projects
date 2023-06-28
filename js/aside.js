@@ -87,10 +87,14 @@ setInterval(getClock, 1000)
 // 날씨
 
 const API_KEY = "a758b2bfe96799600a77b987a34a2210";
-
+const weatherSunny = document.querySelector('.weather span.sunny')
 
 
 function onGeoOk(position){
+
+  weatherSunny.remove()
+
+
   const lat = position.coords.latitude;
   const log = position.coords.longitude;
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${log}&appid=${API_KEY}&units=metric&lang=kr`
@@ -114,11 +118,9 @@ function onGeoOk(position){
     } else if (weatherCondition === 'Rain') {
       weather.innerHTML = `<span class="material-symbols-outlined">rainy</span>`;
     }
-
   }))
 }
 function onGeoError(){
-  // alert("Can't find you, No weather for you")
 }
 
 

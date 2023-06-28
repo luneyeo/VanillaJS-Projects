@@ -26,7 +26,7 @@ function popupRemove(){
   popup.remove()
 }
 
-// popupCloseBtn.addEventListener('click', popupRemove)
+popupCloseBtn.addEventListener('click', popupRemove)
 
 
 

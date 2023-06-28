@@ -71,9 +71,6 @@ aside > div {
   width: calc(100% / 7);
 }
 
-.weeks li {
-  /* color: #aaa; */
-}
 .days li {
   position: relative;
   z-index: 1;
@@ -102,6 +99,7 @@ aside > div {
 } 
 .days li.active::before{
   background-color: var(--color-main);
+  border: 1px solid var(--colot-font-basic);
 } 
 
 
@@ -139,7 +137,14 @@ aside > div {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  position: relative;
+}
+.weather .sunny {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
 }
 .weather span {
   color: var(--colot-font-basic);
