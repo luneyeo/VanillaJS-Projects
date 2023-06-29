@@ -1,5 +1,4 @@
 // 달력
-
 const currentDate = document.querySelector('.calendar--top .current-date')
 const calendar = document.querySelector('.calendar--bottom')
 const daysTag = calendar.querySelector('.days')
@@ -120,6 +119,7 @@ function onGeoOk(position){
     }
   }))
 }
+
 function onGeoError(){
 }
 
