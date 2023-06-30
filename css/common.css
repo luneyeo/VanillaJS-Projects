@@ -13,6 +13,8 @@
   --color-box-hover : #eee;
   --color-cont-main : #251D53;
   --color-btn-delete : #ff4500;
+  --color-btn-font-active : #f3f3f3;
+  --color-bg-grey : #fff;
 
   --bg-img : url("../img/bg.png") no-repeat center;
   --box-shadow : inset 0 0 18px rgba(255, 255, 255, .8);
@@ -31,6 +33,10 @@
   --color-box-hover : #313334;
   --color-cont-main : #cb7400;
   --color-btn-delete : #b11515;
+  --color-btn-font-active : #251D53;
+  --color-bg-grey : #aaa;
+
+
 
 
   --bg-img : url("../img/bg-dark.png") no-repeat center;
@@ -53,8 +59,10 @@
 }
 
 html {
+  --color-green : #429588;
   --color-purple : #251D53;
   --color-white : #fff;
+  --color-grey : #aaa;
   --color-font : #333;
   --color-border : #eee;
   --color-hover : #eee;

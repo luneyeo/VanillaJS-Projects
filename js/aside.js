@@ -1,6 +1,6 @@
 // 달력
-const currentDate = document.querySelector('.calendar--top .current-date')
-const calendar = document.querySelector('.calendar--bottom')
+const currentDate = document.querySelector('.calendar__top .current-date')
+const calendar = document.querySelector('.calendar__bottom')
 const daysTag = calendar.querySelector('.days')
 const prevNextIcons = document.querySelectorAll('.icons span')
 
@@ -116,6 +116,8 @@ function onGeoOk(position){
       weather.innerHTML = `<span class="material-symbols-outlined">sunny</span>`;
     } else if (weatherCondition === 'Rain') {
       weather.innerHTML = `<span class="material-symbols-outlined">rainy</span>`;
+    } else {
+      weather.innerHTML = `<span style="font-size: 17px;">${data.weather[0].description}</span>`;
     }
   }))
 }

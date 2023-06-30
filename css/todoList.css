@@ -1,3 +1,6 @@
+#todoList {
+  display: none;
+}
 .todoList-inner {
   width: 100%;
   height: 100%;
@@ -17,7 +20,7 @@
 }
 
 /* TOP */
-.todoList--top {
+.todoList__top {
   width: 100%;
   height: 100px;
   padding: 0 20px;
@@ -64,7 +67,7 @@ input::placeholder {
 
 
 /* BOTTOM */
-.todoList--bottom {
+.todoList__bottom {
   width: 100%;
   min-height: 60px;
   margin: 15px 0;

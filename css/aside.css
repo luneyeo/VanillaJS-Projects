@@ -13,7 +13,7 @@ aside > div {
 }
 
 /* 달력 윗 부분 */
-.calendar-inner .calendar--top {
+.calendar-inner .calendar__top {
   display: flex;
   align-items: center;
   margin-bottom: 16px;
@@ -21,32 +21,32 @@ aside > div {
   border-bottom: 1px solid var(--color-border);
 }
 
-.calendar-inner .calendar--top > span:first-child {
+.calendar-inner .calendar__top > span:first-child {
   margin-right: 10px;
   font-size: 25px;
   color: var(--colot-font-basic);
 }
-.calendar-inner .calendar--top .current-date {
+.calendar-inner .calendar__top .current-date {
   flex-grow: 1;
   font-size: 18px;
   color: var(--colot-font-basic);
 }
 
-.calendar-inner .calendar--top .icons {
+.calendar-inner .calendar__top .icons {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
 
 }
-.calendar-inner .calendar--top .icons span {
+.calendar-inner .calendar__top .icons span {
   border: 1px solid var(--color-border);
   border-radius: 50%;
   padding: 2px;
   cursor: pointer;
   color: var(--colot-font-basic);
 }
-.calendar-inner .calendar--top .icons span:hover {
+.calendar-inner .calendar__top .icons span:hover {
   background-color: var(--color-btn-hover);
 }
 
@@ -58,16 +58,16 @@ aside > div {
 
 /* 달력 아래 부분 */
 
-.calendar-inner .calendar--bottom li {
+.calendar-inner .calendar__bottom li {
   font-size: 13px;
   color: var(--colot-font-basic);
 }
-.calendar-inner .calendar--bottom ul {
+.calendar-inner .calendar__bottom ul {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
 }
-.calendar--bottom ul li {
+.calendar__bottom ul li {
   width: calc(100% / 7);
 }
 

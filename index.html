@@ -36,7 +36,7 @@
     <header>
       <nav>
         <ul class="menu">
-          <li class="active">
+          <li>
             <a href="#todoList" class="btn">
               <span class="material-symbols-outlined">
                 checklist
@@ -44,7 +44,7 @@
               <span>To Do List</span>
               </a>
           </li>
-          <li>
+          <li class="active">
             <a href="#calculator" class="btn">
               <span class="material-symbols-outlined">
                 calculate
@@ -54,6 +54,7 @@
           </li>
         </ul>
       </nav>
+      <!-- 라이트, 다크 모드 -->
       <div class="mode-container">
         <button class="light-mode active">
           <span class="material-symbols-outlined">light_mode</span>
@@ -70,7 +71,8 @@
       <article id="todoList">
         <div class="todoList-inner">
           <div class="todoList-area">
-            <div class="todoList--top">
+            <!-- 투두리스트 윗 부분 -->
+            <div class="todoList__top">
               <h2 class="tit">TO DO LIST</h2>
               <form class="input-area">
                 <input type="text" placeholder="할 일을 입력하세요 :)">
@@ -79,7 +81,8 @@
                 </button>
               </form>
             </div>
-            <div class="todoList--bottom">
+            <!-- 투두리스트 아래 부분 -->
+            <div class="todoList__bottom">
               <ul class="list-items">
                 <!-- JS -->
               </ul>
@@ -92,9 +95,38 @@
       <article id="calculator">
         <div class="calculator-inner">
           <div class="calculator-area">
-            <span class="material-symbols-outlined">
-              calculate
-            </span>
+            <!-- 계산기 윗 부분 -->
+            <div class="calculator__top">
+              <h2 class="tit">Calculator</h2>
+              <form class="display-result">
+                <input type="text" placeholder="222">
+                <div class="result">1366</div>
+              </form>
+            </div>
+            <!-- 계산기 아래 부분 -->
+            <div class="calculator__bottom">
+              <div class="button__row">
+                <button type="button" class="AC bg-grey">AC</button>
+                <button type="button" class="bg-grey">±</button>
+                <button type="button" class="operator">&#37</button>
+                <button type="button" class="operator">÷</button>
+                <button type="button">7</button>
+                <button type="button">8</button>
+                <button type="button">9</button>
+                <button type="button" class="operator">×</button>
+                <button type="button">4</button>
+                <button type="button">5</button>
+                <button type="button">6</button>
+                <button type="button" class="operator">-</button>
+                <button type="button">1</button>
+                <button type="button">2</button>
+                <button type="button">3</button>
+                <button type="button" class="operator">+</button>
+                <button type="button" class="zero">0</button>
+                <button type="button" >.</button>
+                <button type="button" class="operator calculate">=</button>
+              </div>
+            </div>
           </div>
         </div>
       </article>
@@ -103,7 +135,7 @@
     <aside>
       <div class="calendar">
         <div class="calendar-inner">
-          <div class="calendar--top">
+          <div class="calendar__top">
             <span class="material-symbols-outlined">calendar_month</span>
             <h2 class="current-date"></h2>
             <div class="icons">
@@ -111,7 +143,7 @@
               <span id="next" class="material-symbols-outlined">chevron_right</span>
             </div>
           </div>
-          <div class="calendar--bottom">
+          <div class="calendar__bottom">
             <ul class="weeks">
               <li>Sun</li>
               <li>Mon</li>

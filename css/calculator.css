@@ -1,5 +1,5 @@
 #calculator {
-  display: none;
+  display: block;
 }
 
 .calculator-inner {
@@ -7,12 +7,98 @@
   height: 100%;
 }
 .calculator-area {
+  width: 290px;
+  /* height: 400px; */
+  padding: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #fff;
+
+  box-shadow: 0 0 6px rgba(0,0,0, .3);
+
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  background-color :var(--color-box);
 }
 
-.calculator-area span {
-  color: var(--colot-font-basic)
+
+/* 윗 부분 */
+.calculator__top {
+  margin-bottom: 10px;
+}
+.calculator__top h2 {
+  color: var(--color-purple);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 10px;
+}
+.calculator__top .display-result {
+  text-align: right;
+  padding: 0 10px;
+}
+
+/* 입력창 */
+.calculator__top .display-result input {
+  width: 100%;
+  height: 30px;
+  font-size: 14px;
+  color: var(--color-purple);
+  background-color: transparent;
+  text-align: right;
+}
+.result {
+  height: 70px;
+  line-height: 70px;
+  font-size: 30px;
+  color: var(--colot-font-basic);
+}
+
+
+
+
+
+
+
+
+
+
+/* 아래 부분 */
+.calculator__bottom {
+  /* height: 326px; */
+}
+.calculator__bottom .button__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+.calculator__bottom .button__row button {
+  width: 48px;
+  aspect-ratio: 1/1;
+  margin: 3px;
+
+  border-radius: 50%;
+  font-size: 17px;
+  color: var(--colot-font-basic);
+
+  /* background-color: aliceblue; */
+
+}
+
+.button__row button.zero {
+  width: 122px;
+  height: 48px;
+  border-radius: 30px;
+  grid-column: 1/3;
+}
+
+button.operator {
+  color: var(--color-btn-font-active) !important;
+  background-color: var(--colot-font-basic);
+}
+button.bg-grey {
+  background-color: var(--color-bg-grey);
+
 }
