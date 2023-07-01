@@ -18,12 +18,13 @@
 
   <script defer src="./js/common.js"></script>
   <script defer src="./js/todoList.js"></script>
+  <script defer src="./js/calculator.js"></script>
   <script defer src="./js/aside.js"></script>
 
 </head>
 <body>
   <!-- 팝업 -->
-  <!-- <div id="popup">
+  <div id="popup">
     <div class="popup-area">
       <span class="material-symbols-outlined btn">close</span>
       <span class="text">
@@ -31,12 +32,12 @@
         아직 미완성 작업물이며 계속해서 업로드 됩니다 :)
       </span>
     </div>
-  </div> -->
+  </div>
   <div id="wrap">
     <header>
       <nav>
         <ul class="menu">
-          <li>
+          <li class="active">
             <a href="#todoList" class="btn">
               <span class="material-symbols-outlined">
                 checklist
@@ -44,14 +45,14 @@
               <span>To Do List</span>
               </a>
           </li>
-          <li class="active">
+          <!-- <li>
             <a href="#calculator" class="btn">
               <span class="material-symbols-outlined">
                 calculate
               </span>
               <span>계산기</span>
             </a>
-          </li>
+          </li> -->
         </ul>
       </nav>
       <!-- 라이트, 다크 모드 -->
@@ -98,10 +99,10 @@
             <!-- 계산기 윗 부분 -->
             <div class="calculator__top">
               <h2 class="tit">Calculator</h2>
-              <form class="display-result">
-                <input type="text" placeholder="222">
-                <div class="result">1366</div>
-              </form>
+              <div class="display-result">
+                <p class="input-num"></p>
+                <p class="result">0</p>
+              </div>
             </div>
             <!-- 계산기 아래 부분 -->
             <div class="calculator__bottom">

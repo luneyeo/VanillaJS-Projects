@@ -1,5 +1,5 @@
 #todoList {
-  display: none;
+  display: block;
 }
 .todoList-inner {
   width: 100%;
@@ -132,6 +132,5 @@ li.list-item span:nth-child(2):hover {
   background-color: var(--color-cont-main);
 }
 .all-delete:hover {
-  color: #fff;
   background-color: var(--color-btn-delete);
 }
