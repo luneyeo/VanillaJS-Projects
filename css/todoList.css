@@ -9,9 +9,9 @@
   width: 400px;
   border-radius: 20px;
   overflow: hidden;
-  background-color: #fff;
 
   box-shadow: 0 0 6px rgba(0,0,0, .3);
+  background-color: var(--color-cont-main);
 
   position: absolute;
   top: 50%;
@@ -22,9 +22,9 @@
 /* TOP */
 .todoList__top {
   width: 100%;
-  height: 100px;
+  /* height: 100px; */
   padding: 0 20px;
-  background-color: var(--color-cont-main);
+  margin-bottom: 10px;
 }
 
 h2.tit {
@@ -70,9 +70,9 @@ input::placeholder {
 .todoList__bottom {
   width: 100%;
   min-height: 60px;
-  margin: 15px 0;
-  padding: 0 10px 0 20px;
+  padding: 15px 10px 15px 20px;
   position: relative;
+  background-color: #fff;
 }
 
 .list-items {

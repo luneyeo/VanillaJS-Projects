@@ -15,9 +15,8 @@
   --colot-font-basic : #251D53;
 
   --color-btn-hover : #eee;
-  --color-btn-delete : #ff4500;
   --color-btn-font-active : #f3f3f3;
-  --color-btn-hover-shadow : 0 0 5px rgba(0,0,0, .1);
+  --color-btn-hover-shadow : 0 0 3px rgba(0,0,0, .2);
 
   --color-bg-grey : #fff;
 
@@ -29,7 +28,7 @@
 
 :root[color-theme='dark'] {
   --color-main : #1e1f21;
-  --color-cont-main : #042d62;
+  --color-cont-main : #272829;
   --color-wrap : #1e1f21;
   --color-wrap-border : #313334;
 
@@ -40,9 +39,8 @@
   --colot-font-basic : #f3f3f3;
 
   --color-btn-hover : #1e1f21;
-  --color-btn-delete : #058fa1;
   --color-btn-font-active : #251D53;
-  --color-btn-hover-shadow : 0 0 5px rgba(255,255,255, .2);
+  --color-btn-hover-shadow : 0 0 3px rgba(255,255,255, .3);
 
   --color-bg-grey : #aaa;
 
@@ -73,6 +71,7 @@ html {
   --color-font : #333;
   --color-border : #eee;
   --color-hover : #eee;
+  --color-btn-delete : #ff4500;
 }
 
 

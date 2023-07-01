@@ -140,6 +140,7 @@ function onGeoOk(position){
 }
 
 function onGeoError(){
+  console.log('')
 }
 
 
