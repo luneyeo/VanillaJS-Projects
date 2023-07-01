@@ -4,16 +4,21 @@
 /* 라이트, 다크모드 */
 :root[color-theme='light'] {
   --color-main : #251D53;
-  --color-box : #fff;
-  --colot-font-basic : #251D53;
+  --color-cont-main : #251D53;
   --color-wrap : #ffffff2d;
   --color-wrap-border : #ffffff8d;
-  --color-btn-hover : #eee;
+
+  --color-box : #fff;
   --color-box-inactive : #aaa;
   --color-box-hover : #eee;
-  --color-cont-main : #251D53;
+
+  --colot-font-basic : #251D53;
+
+  --color-btn-hover : #eee;
   --color-btn-delete : #ff4500;
   --color-btn-font-active : #f3f3f3;
+  --color-btn-hover-shadow : 0 0 5px rgba(0,0,0, .1);
+
   --color-bg-grey : #fff;
 
   --bg-img : url("../img/bg.png") no-repeat center;
@@ -24,20 +29,22 @@
 
 :root[color-theme='dark'] {
   --color-main : #1e1f21;
-  --color-box : #272829;
-  --colot-font-basic : #f3f3f3;
+  --color-cont-main : #042d62;
   --color-wrap : #1e1f21;
   --color-wrap-border : #313334;
-  --color-btn-hover : #1e1f21;
+
+  --color-box : #272829;
   --color-box-inactive : #555;
   --color-box-hover : #313334;
-  --color-cont-main : #042d62;
+
+  --colot-font-basic : #f3f3f3;
+
+  --color-btn-hover : #1e1f21;
   --color-btn-delete : #058fa1;
   --color-btn-font-active : #251D53;
+  --color-btn-hover-shadow : 0 0 5px rgba(255,255,255, .2);
+
   --color-bg-grey : #aaa;
-
-
-
 
   --bg-img : url("../img/bg-dark.png") no-repeat center;
   --box-shadow : inset 0 0 18px rgba(255, 255, 255, 0);
