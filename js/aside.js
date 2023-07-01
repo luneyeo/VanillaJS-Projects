@@ -37,6 +37,23 @@ const renderCalendar = () => {
   
   currentDate.innerText = `${currYear}년 ${currMonth + 1}월`
   daysTag.innerHTML = liTag;
+
+
+  // 날짜 클릭하면 click 클래스 추가
+  for(let i = 0; i < daysTag.children.length; i++){
+    daysTag.children[i].addEventListener('click', function(e){
+      e.preventDefault();
+
+      for(let j = 0; j < daysTag.children.length; j++){
+        daysTag.children[j].classList.remove('click')
+      }
+
+      this.classList.add('click')
+    })
+
+  }
+
+
 }
 
 renderCalendar()

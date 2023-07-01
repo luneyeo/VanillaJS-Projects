@@ -83,6 +83,10 @@ aside > div {
 .days li.active {
   color: var(--color-white);
 }
+.days li.click::before{
+  border: 1px solid var(--colot-font-basic);
+} 
+
 .days li::before {
   position: absolute;
   z-index: -1;
