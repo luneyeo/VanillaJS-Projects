@@ -144,4 +144,4 @@ function onGeoError(){
 }
 
 
-navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+// navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);

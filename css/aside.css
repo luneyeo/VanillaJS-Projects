@@ -142,33 +142,29 @@ aside > div {
   align-items: center;
   justify-content: center;
   position: relative;
+
+  overflow: hidden;
 }
-.weather .sunny {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 30px;
-}
+
 .weather span {
   color: var(--colot-font-basic);
 }
-.weather .weather-inner {
+
+
+.weather .weather__ui {
   width: 100%;
   height: 100%;
-  padding: 0px 20px;
-  /* padding: 24px 20px; */
   display: flex;
-  align-items: center;
 }
 
 /* 날씨 아이콘 */
 .weather-icon {
-  width: 90px;
+  width: 70px;
   height: 70px;
 }
 .weather-icon span {
   font-size: 40px;
+  padding-right: 20px;
   border-right: 1px solid;
   width: 100%;
   height: 100%;
@@ -190,4 +186,31 @@ aside > div {
 .weather-info span:last-child {
   font-size: 30px;
   font-weight: bold;
+}
+
+.weather--hover__notice {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: var(--color-white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .2s linear;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+}
+
+.weather:hover .weather--hover__notice {
+  opacity: 1;
+}
+
+
+.weather--hover__notice p {
+  font-size: 14px;
+  word-wrap: normal;
 }
